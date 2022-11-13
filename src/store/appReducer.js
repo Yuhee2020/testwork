@@ -22,19 +22,17 @@ export const slice = createSlice({
     name: "app",
     initialState,
     reducers: {
-        setAppStatus(state, action) {
-            state.appStatus = action.payload.status
+        resetTelNumber(state) {
+            state.telNumber=null
         },
     },
     extraReducers: (builder) => {
         builder.addCase(order.fulfilled, (state, action) => {
-            if (action.payload) {
                 state.telNumber = action.payload.userId
-            }
         });
     }
 })
 
 
 export const appReducer = slice.reducer
-export const {setTheme} = slice.actions
+export const {resetTelNumber} = slice.actions

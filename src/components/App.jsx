@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHandPointRight, faHome} from "@fortawesome/free-solid-svg-icons";
-import {order} from "../store/appReducer";
+import {order, resetTelNumber} from "../store/appReducer";
 import {useDispatch, useSelector} from "react-redux";
 import "./app.scss"
-import re from '../img/bg.jpg'
+import {Popup} from "./Popup";
+
 
 
 
@@ -22,9 +23,13 @@ export const App = () => {
         error != null && setError(null)
         setValue(e.currentTarget.value)
     }
+
+    const resetNumber=()=>{
+        dispatch(resetTelNumber())
+    }
+
     return (
-        <div className="main">
-            <img src={re}/>
+        <div>
             <div className="fullInput">
                 <div className="cell">
                     <input value={value} onChange={onChangeHandler} placeholder="Ваш номер..."/>
@@ -35,8 +40,8 @@ export const App = () => {
                     </button>
                 </div>
             </div>
-            <div>{error}</div>
-            {number && <div>заказ для номера {number} принят</div>}
+            <div className="error">{error}</div>
+            {number && <Popup closePopup={resetNumber} text={number}/>}
         </div>
     );
 };
