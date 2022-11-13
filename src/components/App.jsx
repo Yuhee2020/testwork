@@ -3,6 +3,7 @@ import {order, resetTelNumber} from "../store/appReducer";
 import {useDispatch, useSelector} from "react-redux";
 import {Popup} from "./Popup/Popup";
 import {FullInput} from "./FullInput/FullInput";
+import "./app.scss"
 
 
 export const App = () => {
@@ -19,7 +20,7 @@ export const App = () => {
     }
 
     return (
-        <div>
+        <div className='app'>
             <FullInput callback={dispatchOrder} title={"Заказать"}/>
             {number && <Popup closePopup={resetNumber} text={number}/>}
         </div>

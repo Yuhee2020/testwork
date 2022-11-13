@@ -1,35 +1,77 @@
 
-.fullInput {
-  margin-left: 50px;
-  width: 580px;
-  display: flex;
-  transform: skewX(-50deg);
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+.container {
+  margin-top: 6%;
+  margin-left: 6%;
 
-  @media only screen and (max-width: 680px) {
-    transform: inherit;
-    width: 360px;
+  .fullInput {
+    margin-left: 50px;
+    max-width: 60%;
+    display: flex;
+    transform: skewX(-50deg);
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.5);
+
+    @media only screen and (max-width: 680px) {
+      transform: inherit;
+      max-width: 90%;
+      margin-left: 10px;
+    }
+
+    .buttonContainer {
+      display: flex;
+      overflow: hidden;
+      width: 35%;
+
+      button {
+        color: white;
+        background: red;
+        height: 50px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transform: skewX(50deg);
+        margin: 0 -32px;
+        border: none;
+        flex: 1;
+        font-size: 18px;
+
+        @media (max-width: 680px) {
+          transform: inherit;
+          width: 40%;
+        }
+      }
+
+      button:hover {
+        background-color: white;
+        color: red;
+      }
+    }
   }
 
-
-  .cell {
+  .inputContainer {
     display: flex;
     overflow: hidden;
+    width: 65%;
 
     input {
-      width: 400px;
       border: none;
       outline: none;
       padding: 4px 5px 4px 60px;
       background-color: rgba(0, 0, 0, .2);
+      transform: skewX(50deg);
+      margin: 0 -32px;
+      overflow: hidden;
+      flex: 1;
+      font-size: 18px;
+
       @media (max-width: 680px) {
-        width:220px ;
+        transform: inherit;
+        width: 60%;
       }
     }
 
     input:hover {
       background-color: #fafafa;
     }
+
     input:focus {
       background-color: #fafafa;
     }
@@ -37,42 +79,11 @@
     input::placeholder {
       color: #696969;;
     }
-
-    button {
-      color: white;
-      width: 250px;
-      padding: 4px 25px 4px 20px;
-      background: red;
-      height: 50px;
-      text-transform: uppercase;
-      cursor: pointer;
-      @media (max-width: 680px) {
-        width:210px ;
-      }
-    }
-
-
-    button:hover {
-      background-color: white;
-      color: red;
-    }
   }
 
-  .cell > * {
-    transform: skewX(50deg);
-    margin: 0 -32px;
-    border: none;
-    flex: 1;
-    font-size: 18px;
-
-    @media (max-width: 680px) {
-      transform: inherit;
-    }
+  .error {
+    color: red;
+    margin-top: 5px;
+    margin-left: 60px;
   }
-}
-
-.error{
-  color: red;
-  margin-top: 5px;
-  margin-left: 60px;
 }

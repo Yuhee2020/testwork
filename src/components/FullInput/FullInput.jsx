@@ -14,26 +14,27 @@ export const FullInput = ({callback, title}) => {
         setValue(e.currentTarget.value)
     }
 
-    const onClickHandler=()=>{
-        value.trim()
-            ? (callback(value.trim()), setValue(""))
-            : setError("Введите номер")
+    const onClickHandler = () => {
+        if (value.trim()) {
+            callback(value.trim())
+            setValue("")
+        } else setError("Введите номер")
     }
 
     return (
-        <>
+        <div className="container">
             <div className="fullInput">
-                <div className="cell">
+                <div className="inputContainer">
                     <input value={value} onChange={onChangeHandler} placeholder="Ваш номер..."/>
                 </div>
-                <div className="cell">
+                <div className="buttonContainer">
                     <button onClick={onClickHandler}>
                         <FontAwesomeIcon icon={faHandPointRight}/> {title}
                     </button>
                 </div>
             </div>
             <div className="error">{error}</div>
-        </>
+        </div>
     )
 };
 
