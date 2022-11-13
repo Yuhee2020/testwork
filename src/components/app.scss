@@ -1,0 +1,54 @@
+.main{
+
+}
+.fullInput {
+  margin-left: 50px;
+  width:580px ;
+  display: flex;
+  transform: skewX(-50deg);
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+
+
+  .cell {
+    display: flex;
+    overflow: hidden;
+
+
+    input {
+      width: 400px;
+      border: none;
+      outline: none;
+      padding: 4px 5px 4px 60px;
+      background-color:  rgba(0,0,0,.2);
+    }
+    input:hover{
+      background-color: #fafafa;
+    }
+
+    input::placeholder {
+      color: #696969;;
+    }
+
+    button {
+      color: white;
+      width: 250px;
+      padding: 4px 25px 4px 20px;
+      background: red;
+      height: 50px;
+      text-transform: uppercase;
+      cursor: pointer ;
+    }
+    button:hover{
+      background-color: white;
+      color: red;
+    }
+  }
+
+  .cell > * {
+    transform: skewX(50deg);
+    margin: 0 -32px;
+    border: none;
+    flex: 1;
+    font-size: 18px;
+  }
+}

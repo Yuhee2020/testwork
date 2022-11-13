@@ -6,6 +6,7 @@ export const instance = axios.create({
 
 
 export const orderAPI = {
+
     order(number) {
         const  data={
             title: 'foo',

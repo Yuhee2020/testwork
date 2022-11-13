@@ -33,6 +33,10 @@ module.exports={
                 loader: "html-loader",
             },
             {
+                test: /\.(jpg|jpeg|png|svg)/,
+                use: ['file-loader']
+            },
+            {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
                     (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
