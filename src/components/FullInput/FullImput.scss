@@ -21,6 +21,10 @@
       overflow: hidden;
       width: 35%;
 
+      @media (max-width: 680px) {
+        width: 40%;
+      }
+
       button {
         color: white;
         background: red;
@@ -35,7 +39,6 @@
 
         @media (max-width: 680px) {
           transform: inherit;
-          width: 40%;
         }
       }
 
@@ -51,6 +54,10 @@
     overflow: hidden;
     width: 65%;
 
+    @media (max-width: 680px) {
+      width: 60%;
+    }
+
     input {
       border: none;
       outline: none;
@@ -64,7 +71,6 @@
 
       @media (max-width: 680px) {
         transform: inherit;
-        width: 60%;
       }
     }
 
